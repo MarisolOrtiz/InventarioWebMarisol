@@ -14,7 +14,7 @@
         <h1>BIENVENID@ !</h1>
         <div style="width: 600px; margin: 0% 35%; width: 600px; text-align: center;">
             <a href="<%= request.getContextPath()%>/categorias?opcion=crear" class="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button">Nueva Categoria</a>
-            <a onclick="javascript:window.imprimirDIV('ID_DIV');" href="#"  class="btn btn-success btn-sm " role="button" ><span class="glyphicon glyphicon-print"> PDF</span> </a>
+            <a href="pdf" class="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button"  >PDF+</a>
             <h3>Listado de Categorias</h3>
          <script>
                 function imprimirDIV(ID_DIV) {
