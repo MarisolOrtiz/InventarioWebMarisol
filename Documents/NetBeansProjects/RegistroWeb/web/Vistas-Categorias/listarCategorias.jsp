@@ -14,8 +14,19 @@
         <h1>BIENVENID@ !</h1>
         <div style="width: 600px; margin: 0% 35%; width: 600px; text-align: center;">
             <a href="<%= request.getContextPath()%>/categorias?opcion=crear" class="btn btn-success btn-sm glyphicon glyphicon-pencil" role="button">Nueva Categoria</a>
+            <a onclick="javascript:window.imprimirDIV('ID_DIV');" href="#"  class="btn btn-success btn-sm " role="button" ><span class="glyphicon glyphicon-print"> PDF</span> </a>
             <h3>Listado de Categorias</h3>
-             <table class="table table-striped">
+         <script>
+                function imprimirDIV(ID_DIV) {
+                var ficha = document.getElementById(ID_DIV);
+                 var ventanaImpresion = window.open(' ', 'popUp');
+                ventanaImpresion.document.write(ficha.innerHTML);
+                ventanaImpresion.document.close();
+                ventanaImpresion.print();
+                ventanaImpresion.close();
+                 }
+         </script>
+             <table id="ID_DIV" class="table table-striped">
                  <thead class="thead-dark">
                 <tr>
                     <th scope="col">ID</th><th scope="col">NOMBRE</th><th scope="col">ESTADO</th><th scope="col">ACCION</th>
@@ -25,7 +36,8 @@
                     for(int i = 0; i < lista.size(); i++){
                         Categoria categoria = new Categoria ();
                         categoria = (Categoria)lista.get(i);
-                    
+                        
+                        
                 %>
                 <tr>
                     <td><%= categoria.getId_categoria() %></td>
